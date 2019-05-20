@@ -16,7 +16,8 @@ Route::get('/', function () {
 });
 
 Route::get('/voyages/{id_voyage?}', function ($id_voyage = null) {
-    return "Ceci est la page qui affichera le detaild’un voyage identifié par $id_voyage";
+    if (isset($id_voyage)) return "Ceci est la page qui affichera le detail d’un voyage identifié par $id_voyage";
+    return "Ceci est la page qui affichera tous les voyages";
 })->where('id_voyage',	'[0-9]+');
 
 Route::get('/a_propos', function () {
