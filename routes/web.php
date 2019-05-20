@@ -12,24 +12,27 @@
 */
 
 Route::get('/', function () {
-    return "Ceci est la page d’accueil";
-});
+    return view('index');
+})->name('index');
 
-Route::get('/voyages/{id_voyage?}', function ($id_voyage = null) {
-    if (isset($id_voyage)) return "Ceci est la page qui affichera le detail d’un voyage identifié par $id_voyage";
-    return "Ceci est la page qui affichera tous les voyages";
-})->where('id_voyage',	'[0-9]+');
+Route::get('voyages', function () {
+    return view('index');
+})->name('index');
 
-Route::get('/a_propos', function () {
-    return "Ceci est la page qui affichera les informations concernant l’entreprise";
-});
+Route::get('voyages/{id_voyage}', function ($id_voyage) {
+    return view('show');
+})->where('id_voyage', '[0-9]+')->name('show');
 
-Route::prefix('admin')->group(function () {	
-    Route::get('/voyages', function () {
-        return "Ceci est la page voyages de la console d’administration";
-    });
+Route::get('a_propos', function () {
+    return view('about');
+})->name('about');
 
-    Route::get('/users', function () {
-        return "Ceci est la page users de la console d’administration";
-    });
+Route::prefix('admin')->group(function () {
+    Route::get('voyages', function () {
+        return view('admin/voyages');
+    })->name('admin-travels');
+
+    Route::get('users', function () {
+        return view('admin/users');
+    })->name('admin-users');
 });
