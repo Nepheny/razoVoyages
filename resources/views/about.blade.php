@@ -1,6 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
+@if (isset($message) && isset($code))
+<section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/bg_1.jpg);">
+  <div class="container">
+    <div class="row justify-content-center mb-5 pb-3">
+      <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
+        <h2 class="mb-4">{{ $code }}</h2>
+        <span class="subheading">{{ $message }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+@endif
+
     <section class="ftco-section testimony-section bg-light">
       <div class="container">
         <div class="row justify-content-start">

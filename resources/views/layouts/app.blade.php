@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>DirEngine - Free Bootstrap 4 Template by Colorlib</title>
+    <title>RazoVoyages</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -37,8 +37,8 @@
 
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a href="{{ route('index') }}" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="{{ route('about') }}" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="{{ route('index') }}" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="{{ route('about') }}" class="nav-link">About</a></li>
           <li class="nav-item"><a href="{{ route('show', ['id_voyages' => 1]) }}" class="nav-link">Tour</a></li>
         </ul>
       </div>

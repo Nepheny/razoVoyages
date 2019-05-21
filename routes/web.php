@@ -23,9 +23,7 @@ Route::get('voyages/{id_voyage}', function ($id_voyage) {
     return view('show');
 })->where('id_voyage', '[0-9]+')->name('show');
 
-Route::get('a_propos', function () {
-    return view('about');
-})->name('about');
+Route::get('a-propos', 'StaticPageController@about')->name('about');
 
 Route::prefix('admin')->group(function () {
     Route::get('voyages', function () {
