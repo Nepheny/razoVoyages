@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Voyage;
 use Illuminate\Http\Request;
+use Validator;
 
 class VoyageAdminController extends Controller
 {
@@ -37,6 +38,18 @@ class VoyageAdminController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'title' => 'required|max:255',
+            'image' => 'required',
+            'price' => 'required|max:3000',
+            'destination' => 'required|max:255',
+            'description' => 'required'
+        ]);
+
+        if($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
+
         $voyage = new Voyage();
         $voyage->title = $request->title;
         $voyage->image = $request->image;
@@ -84,6 +97,18 @@ class VoyageAdminController extends Controller
      */
     public function update(Request $request, Voyage $voyage)
     {
+        $validator = Validator::make($request->all(), [
+            'title' => 'required|max:255',
+            'image' => 'required',
+            'price' => 'required|max:3000',
+            'destination' => 'required|max:255',
+            'description' => 'required'
+        ]);
+
+        if($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
+        
         $voyage->title = $request->title;
         $voyage->image = $request->image;
         $voyage->price = $request->price;

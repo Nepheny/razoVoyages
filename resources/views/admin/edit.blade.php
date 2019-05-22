@@ -1,6 +1,22 @@
 @extends('layouts.admin')
 @section('content')
-<div class="container">
+
+@if($errors->any())
+  <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/bg_1.jpg);">
+    <div class="container">
+      <div class="row justify-content-center mb-5 pb-3">
+        <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
+          <h2 class="mb-4">Erreur</h2>
+          @foreach ($errors->all() as $error)
+            <span class="subheading">{{ $error }}</span>
+          @endforeach
+        </div>
+      </div>
+    </div>
+  </section>
+@endif
+
+<div class="container forms">
   <form method="POST" action="{{ route('admin.voyages.update', ['voyage' => $voyage]) }}">
     @csrf
     @method("PATCH")
@@ -20,7 +36,7 @@
       </div>
       <div class="form-group">
         <div class="col-md">
-          <input type="number" name="price" value="{{ $voyage->price }}" class="form-control" placeholder="Prix en €" required>
+          <input type="number" step="any" name="price" value="{{ $voyage->price }}" class="form-control" placeholder="Prix en €" required>
         </div>
       </div>
       <div class="form-group">
@@ -41,4 +57,5 @@
     </div>
   </form>
 </div>
+
 @endsection
