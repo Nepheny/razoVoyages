@@ -54,8 +54,13 @@ table.table th i {
 }
 table.table td:last-child {
   width: 130px;
+  display: flex;
+  justify-content: center;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
 }
-table.table td a {
+table.table td a, table.table td form {
   color: #a0a5b1;
   display: inline-block;
   margin: 0 5px;
@@ -66,8 +71,9 @@ table.table td a.view {
 table.table td a.edit {
   color: #FFC107;
 }
-table.table td a.delete {
+table.table td form.delete {
   color: #E34724;
+  cursor: pointer;
 }
 table.table td i {
   font-size: 19px;
@@ -127,4 +133,26 @@ table.table td i {
 
 .add-btn-padding {
   padding-left: 5px;
+}
+
+.navbar {
+  margin-bottom: 0!important;
+}
+
+.heading-section .subheading {
+  font-style: italic!important;
+}
+
+.form-control {
+  margin: 20px 0;
+}
+
+.search-box>.form-control {
+  margin: 0;
+}
+
+.delete-input {
+  border: none;
+  background: none;
+  padding: 0;
 }

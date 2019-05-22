@@ -37,15 +37,16 @@
     
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark" id="ftco-navbar">
     <div class="container">
-      <a class="navbar-brand" href="{{ route('index') }}">razoVoyages Back-office</a>
+      <a class="navbar-brand" href="{{ route('admin.voyages.index') }}">razoVoyages Back-office</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="oi oi-menu"></span> Menu
       </button>
 
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a href="{{ route('admin-travels') }}" class="nav-link">Voyages</a></li>
-          <li class="nav-item"><a href="{{ route('admin-users') }}" class="nav-link">Utilisateurs</a></li>
+          <li class="nav-item"><a href="{{ route('admin.voyages.index') }}" class="nav-link">Voyages</a></li>
+          <li class="nav-item"><a href="" class="nav-link">Utilisateurs</a></li>
+          <li class="nav-item"><a href="{{ route('voyages.index') }}" class="nav-link">Site</a></li>
         </ul>
       </div>
     </div>

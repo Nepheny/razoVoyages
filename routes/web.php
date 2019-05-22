@@ -12,25 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('index');
-})->name('index');
+    return redirect('voyages.index');
+});
 
-Route::get('voyages', function () {
-    return view('index');
-})->name('index');
-
-Route::get('voyages/{id_voyage}', function ($id_voyage) {
-    return view('show');
-})->where('id_voyage', '[0-9]+')->name('show');
+Route::resource('voyages', 'VoyageController');
 
 Route::get('a-propos', 'StaticPageController@about')->name('about');
 
 Route::prefix('admin')->group(function () {
-    Route::get('voyages', function () {
-        return view('admin/voyages');
-    })->name('admin-travels');
-
-    Route::get('users', function () {
-        return view('admin/users');
-    })->name('admin-users');
+    Route::resource('voyages', 'VoyageAdminController', ['as' => 'admin']);
 });
