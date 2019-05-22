@@ -57,10 +57,8 @@ class VoyageAdminController extends Controller
         $voyage->destination = $request->destination;
         $voyage->description = $request->description;
         $voyage->save();
-
-        $voyages = Voyage::all();
-
-        return view('admin.index', ['voyages' => $voyages]);
+;
+        return redirect()->route('admin.voyages.index')->with(["status" =>"Voyage ajouté"]);
     }
 
     /**
@@ -108,7 +106,7 @@ class VoyageAdminController extends Controller
         if($validator->fails()) {
             return back()->withErrors($validator)->withInput();
         }
-        
+
         $voyage->title = $request->title;
         $voyage->image = $request->image;
         $voyage->price = $request->price;
@@ -116,9 +114,7 @@ class VoyageAdminController extends Controller
         $voyage->description = $request->description;
         $voyage->save();
 
-        $voyages = Voyage::all();
-
-        return view('admin.index', ['voyages' => $voyages]);
+        return redirect()->route('admin.voyages.index')->with(["status" =>"Voyage mis à jour"]);
     }
 
     /**
@@ -132,8 +128,6 @@ class VoyageAdminController extends Controller
         $voyage = Voyage::find($id);
         $voyage->delete();
 
-        $voyages = Voyage::all();
-
-        return view('admin.index', ['voyages' => $voyages]);
+        return redirect()->route('admin.voyages.index')->with(["status" =>"Voyage supprimé"]);
     }
 }

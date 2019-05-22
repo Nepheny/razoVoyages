@@ -1,5 +1,18 @@
 @extends('layouts.admin')
 @section('content')
+
+@if (session('status'))
+<section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/bg_1.jpg);">
+    <div class="container">
+      <div class="row justify-content-center mb-5 pb-3">
+        <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
+          <h2 class="mb-4">{{ session('status') }}</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+@endif
+
 <div class="container">
   <div class="table-wrapper">
       <div class="table-title">
@@ -52,5 +65,6 @@
           </tbody>
       </table>
   </div>
-</div>     
+</div>    
+
 @endsection

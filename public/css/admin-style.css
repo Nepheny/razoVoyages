@@ -52,6 +52,12 @@ table.table th i {
   margin: 0 5px;
   cursor: pointer;
 }
+table.table td:first-child {
+  width: 130px;
+  display: flex;
+  justify-content: center;
+  border: none;
+}
 table.table td:last-child {
   width: 130px;
   display: flex;
