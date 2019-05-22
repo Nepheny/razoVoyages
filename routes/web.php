@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return redirect('voyages.index');
-});
+Route::get('/', 'VoyageController@index');
 
 Route::resource('voyages', 'VoyageController');
 
@@ -22,3 +20,7 @@ Route::get('a-propos', 'StaticPageController@about')->name('about');
 Route::prefix('admin')->group(function () {
     Route::resource('voyages', 'VoyageAdminController', ['as' => 'admin']);
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
