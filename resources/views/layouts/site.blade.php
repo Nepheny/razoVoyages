@@ -7,6 +7,7 @@
     
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Alex+Brush" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <link rel="stylesheet" href="{{ asset('css/open-iconic-bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
@@ -37,6 +38,13 @@
 
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <form class="form-group search-form" id="search-form" action="{{ route('search') }}" method="POST">
+                @csrf
+                <input type="text" name="title" placeholder="Recherche..." class="form-control search-input" />
+                <input type="submit" class="material-icons search-icon" value="&#xE8B6;">
+              </form>
+            </li>
           <li class="nav-item"><a href="{{ route('voyages.index') }}" class="nav-link">Accueil</a></li>
           <li class="nav-item"><a href="{{ route('about') }}" class="nav-link">About</a></li>
           @auth
@@ -68,26 +76,6 @@
           <div class="col-md-9 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
             <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><strong>Explore <br></strong> your amazing city</h1>
             <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Find great places to stay, eat, shop, or visit from local experts</p>
-            <div class="block-17 my-4">
-              <form action="" method="post" class="d-block d-flex">
-                <div class="fields d-block d-flex">
-                  <div class="textfield-search one-third">
-                  	<input type="text" class="form-control" placeholder="Ex: food, service, hotel">
-                  </div>
-                  <div class="select-wrap one-third">
-                    <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                    <select name="" id="" class="form-control" placeholder="Keyword search">
-                      <option value="">Where</option>
-                      <option value="">San Francisco USA</option>
-                      <option value="">Berlin Germany</option>
-                      <option value="">Lodon United Kingdom</option>
-                      <option value="">Paris Italy</option>
-                    </select>
-                  </div>
-                </div>
-                <input type="submit" class="search-submit btn btn-primary" value="Search">  
-              </form>
-            </div>
             <p>Or browse the highlights</p>
             <p class="browse d-md-flex">
             	<span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-fork"></i>Restaurant</a></span>

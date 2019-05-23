@@ -9332,10 +9332,36 @@ textarea.form-control {
 @keyframes loader-dash {
   0% {
     stroke-dasharray: 1, 200;
-    stroke-dashoffset: 0; }
+    stroke-dashoffset: 0;
+  }
   50% {
     stroke-dasharray: 89, 200;
-    stroke-dashoffset: -35px; }
+    stroke-dashoffset: -35px;
+  }
   100% {
     stroke-dasharray: 89, 200;
-    stroke-dashoffset: -136px; } }
+    stroke-dashoffset: -136px;
+  }
+}
+
+.search-form {
+  position: relative;
+  background: none;
+}
+
+.search-input {
+  border-radius: 50px;
+}
+
+.search-input::placeholder {
+  font-style: italic;
+}
+
+.search-icon {
+  position: absolute;
+  top: 23px;
+  right: 25px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}

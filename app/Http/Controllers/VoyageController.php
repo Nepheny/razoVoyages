@@ -20,30 +20,9 @@ class VoyageController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      *
-     * @param  \App\Voyage  $voyage
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show(int $id)
@@ -54,36 +33,15 @@ class VoyageController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Voyage  $voyage
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Voyage $voyage)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
+     * Display a specific listinf og the resource.
+     * 
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Voyage  $voyage
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Voyage $voyage)
+    public function search(Request $request)
     {
-        //
-    }
+        $voyages = Voyage::where('title', 'Like', "%$request->title%")->orderBy('id','desc')->get(); 
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Voyage  $voyage
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Voyage $voyage)
-    {
-        //
+        return view('index', ['voyages' => $voyages]);
     }
 }

@@ -15,6 +15,8 @@ Route::get('/', 'VoyageController@index');
 
 Route::resource('voyages', 'VoyageController');
 
+Route::post('search', 'VoyageController@search')->name('search');
+
 Route::get('a-propos', 'StaticPageController@about')->name('about');
 
 Route::prefix('admin')->group(function () {

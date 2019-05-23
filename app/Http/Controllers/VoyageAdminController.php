@@ -64,7 +64,7 @@ class VoyageAdminController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Voyage  $voyage
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show(int $id)
@@ -77,7 +77,7 @@ class VoyageAdminController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Voyage  $voyage
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit(int $id)
@@ -120,7 +120,7 @@ class VoyageAdminController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Voyage  $voyage
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(int $id)
