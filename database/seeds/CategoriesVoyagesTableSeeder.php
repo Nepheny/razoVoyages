@@ -11,6 +11,6 @@ class CategoriesVoyagesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(App\Category::class, 300)->create(); 
     }
 }

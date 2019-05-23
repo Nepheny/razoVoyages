@@ -16,7 +16,7 @@ class Voyage extends Model
         return $this->hasMany('App\Post');
     }
 
-    public function dates_categories()
+    public function categories()
     {
         return $this->belongsToMany('App\Category');
     }

@@ -7,6 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Result::class, function (Faker $faker) {
     return [
-        'recipe' => $faker->$faker->randomFloat(2, 50, 3000)
+        'recipe' => $faker->randomFloat(2, 50, 3000),
+        'voyage_id' => $faker->numberBetween(1, 20)
     ];
 });
