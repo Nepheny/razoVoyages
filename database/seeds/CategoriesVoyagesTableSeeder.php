@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class VoyagesTableSeeder extends Seeder
+class CategoriesVoyagesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class VoyagesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Voyage::class, 20)->create(); 
+        //
     }
 }
