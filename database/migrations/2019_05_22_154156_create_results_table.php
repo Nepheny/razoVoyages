@@ -17,7 +17,7 @@ class CreateResultsTable extends Migration
             $table->bigIncrements('id');
             $table->float('recipe');
             $table->bigInteger('voyage_id')->unsigned();
-            $table->foreign('voyage_id')->references('id')->on('voyages');
+            $table->foreign('voyage_id')->references('id')->on('voyages')->onDelete('cascade');
             $table->timestamps();
         });
     }

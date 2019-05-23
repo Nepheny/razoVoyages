@@ -15,7 +15,7 @@ class AddForeignKeyVoyageToPostsTable extends Migration
     {
         Schema::table('posts', function (Blueprint $table) {
             $table->bigInteger('voyage_id')->unsigned();
-            $table->foreign('voyage_id')->references('id')->on('voyages');
+            $table->foreign('voyage_id')->references('id')->on('voyages')->onDelete('cascade');
         });
     }
 

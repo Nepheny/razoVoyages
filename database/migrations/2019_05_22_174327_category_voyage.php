@@ -16,9 +16,9 @@ class CategoryVoyage extends Migration
         Schema::create('category_voyage', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('category_id')->unsigned();
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->bigInteger('voyage_id')->unsigned();
-            $table->foreign('voyage_id')->references('id')->on('voyages');
+            $table->foreign('voyage_id')->references('id')->on('voyages')->onDelete('cascade');
             $table->timestamps();
             });
     }
